@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body style="user-select: none;">
+    <div id="app" style="font-size: 200%;" </div>
+        <script>
+            //Model
+            let color = '_____';
+            let being = '_____';
+            let action = '_____';
+            let entity = '_____';
+            let place = '_____';
+            //View
+            updateView()
+            function updateView() {
+                document.getElementById("app").innerHTML = /*HTML*/ `
+            <div>Once there was a ${color} ${being} who ${action} on a ${entity} and rode it all the way to ${place}.</div>
+            <div class="OuterFrame">
+                <div onclick="colorSelect(this.innerHTML)" class="button">Red</div>
+                <div onclick="colorSelect(this.innerHTML)" class="button">Green</div>
+                <div onclick="colorSelect(this.innerHTML)" class="button">Cyan</div>
+            </div>
+            <div class="OuterFrame">
+                <div onclick="beingSelect(this.innerHTML)" class="button">Woman</div>
+                <div onclick="beingSelect(this.innerHTML)" class="button">Man</div>
+                <div onclick="beingSelect(this.innerHTML)" class="button">Cat</div>
+            </div>
+            <div class="OuterFrame">
+                <div onclick="actionSelect(this.innerHTML)" class="button">Ran</div>
+                <div onclick="actionSelect(this.innerHTML)" class="button">Walked</div>
+                <div onclick="actionSelect(this.innerHTML)" class="button">Strolled</div>
+                </div>
+            <div class="OuterFrame">
+                <div onclick="entitySelect(this.innerHTML)" class="button">Plane</div>
+                <div onclick="entitySelect(this.innerHTML)" class="button">Train</div>
+                <div onclick="entitySelect(this.innerHTML)" class="button">Boat</div>
+            </div>
+            <div class="OuterFrame">
+                <div onclick="placeSelect(this.innerHTML)" class="button">Paris</div>
+                <div onclick="placeSelect(this.innerHTML)" class="button">London</div>
+                <div onclick="placeSelect(this.innerHTML)" class="button">NYC</div>
+            </div>
+        `}
+            //Controller
+            function colorSelect(selection) {
+                color = selection.toLowerCase();
+                updateView()
+            }
+            function beingSelect(selection) {
+                being = selection.toLowerCase();
+                updateView()
+            }
+            function actionSelect(selection) {
+                action = selection.toLowerCase();
+                updateView()
+            }
+            function entitySelect(selection) {
+                entity = selection.toLowerCase();
+                updateView()
+            }
+            function placeSelect(selection) {
+                place = selection;
+                updateView()
+            }
+        </script>
+</body>
+
+</html>

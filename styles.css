@@ -1,0 +1,12 @@
+.OuterFrame {
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 20px;
+}
+
+.button {
+    width: 120px;
+    text-align: center;
+    border: solid grey 3px;
+    border-radius: 10px;
+}
